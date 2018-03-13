@@ -6,7 +6,7 @@ namespace NineWebService.Services
 {
     public class DataService : IDataService
     {
-        public Response ProcessIncomingShowJsonString(Root root)
+        public Response ProcessIncomingShowData(Root root)
         {
             throw new NotImplementedException();
         }

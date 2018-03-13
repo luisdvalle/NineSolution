@@ -8,6 +8,6 @@ namespace NineWebService.Abstractions
 {
     public interface IDataService
     {
-        Response ProcessIncomingShowJsonString(Root root);
+        Response ProcessIncomingShowData(Root root);
     }
 }

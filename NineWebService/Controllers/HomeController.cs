@@ -17,7 +17,14 @@ namespace NineWebService.Controllers
         [HttpPost]
         public IActionResult Index([FromBody]Root root)
         {
-            return Ok();
+            Response responseData = _dataService.ProcessIncomingShowData(root);
+
+            if (responseData == null)
+            {
+                BadRequest("Could not decode request: JSON parsing failed");
+            }
+
+            return Ok(responseData);
         }
     }
 }

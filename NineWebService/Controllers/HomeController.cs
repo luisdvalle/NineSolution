@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NineWebService.Abstractions;
 using NineWebService.Models;
+using System.Json;
 
 namespace NineWebService.Controllers
 {
@@ -15,14 +16,20 @@ namespace NineWebService.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index([FromBody]Root root)
+        public IActionResult Index([FromBody]RequestData requestData)
         {
-            Response responseData = _dataService.ProcessIncomingShowData(root);
-
-            if (responseData == null)
+            if (requestData == null)
             {
-                BadRequest("Could not decode request: JSON parsing failed");
+                return BadRequest
+                    (
+                    new
+                    {
+                        error = "Could not decode request: JSON parsing failed"
+                    }
+                    );
             }
+
+            Response responseData = _dataService.ProcessIncomingShowData(requestData);
 
             return Ok(responseData);
         }

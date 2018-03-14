@@ -20,16 +20,10 @@ namespace NineWebService.Controllers
         {
             if (requestData == null)
             {
-                return BadRequest
-                    (
-                    new
-                    {
-                        error = "Could not decode request: JSON parsing failed"
-                    }
-                    );
+                return BadRequest( new { error = "Could not decode request: JSON parsing failed" } );
             }
 
-            Response responseData = _dataService.ProcessIncomingShowData(requestData);
+            Response responseData = _dataService.ProcessIncomingShowData(requestData);                                
 
             return Ok(responseData);
         }

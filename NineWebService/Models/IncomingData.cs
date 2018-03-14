@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace NineWebService.Models
 {
-    public class RequestData
+    public class IncomingData
     {
         public Payload[] Payload { get; set; }
         public int? Skip { get; set; }

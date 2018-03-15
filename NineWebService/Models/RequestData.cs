@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace NineWebService.Models
+﻿namespace NineWebService.Models
 {
-    public class IncomingData
+    public class RequestData
     {
         public Payload[] Payload { get; set; }
         public int? Skip { get; set; }

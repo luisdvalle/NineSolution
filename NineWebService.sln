@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataService", "DataService\DataService.csproj", "{92433D39-1C1A-4229-B628-0D3F67B85DCE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F9B8F9B8-DA07-455E-8F5A-20E42E3ACAE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{43C3064F-D560-413E-9507-9D91D81D30A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +27,17 @@ Global
 		{92433D39-1C1A-4229-B628-0D3F67B85DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92433D39-1C1A-4229-B628-0D3F67B85DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92433D39-1C1A-4229-B628-0D3F67B85DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43C3064F-D560-413E-9507-9D91D81D30A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43C3064F-D560-413E-9507-9D91D81D30A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43C3064F-D560-413E-9507-9D91D81D30A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43C3064F-D560-413E-9507-9D91D81D30A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{92433D39-1C1A-4229-B628-0D3F67B85DCE} = {B3E256B2-7573-4362-B98B-BB561C1F7B62}
+		{43C3064F-D560-413E-9507-9D91D81D30A2} = {F9B8F9B8-DA07-455E-8F5A-20E42E3ACAE0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4BA4DDB0-4218-4288-817B-E5BD0D387233}

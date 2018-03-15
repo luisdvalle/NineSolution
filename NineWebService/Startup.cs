@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using DataService.Abstractions;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using NineWebService.Abstractions;
+using NineWebService.Models;
 using NineWebService.Services;
 
 namespace NineWebService
@@ -22,7 +23,7 @@ namespace NineWebService
             services.AddMvc();
 
             // Register DI mapping
-            services.AddScoped<IDataService, DataService>();
+            services.AddScoped<IDataProcessor<Payload>, RequestDataProcessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

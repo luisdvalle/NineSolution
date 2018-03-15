@@ -1,16 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using NineWebService.Abstractions;
+﻿using DataService.Abstractions;
+using Microsoft.AspNetCore.Mvc;
 using NineWebService.Models;
-using System.Json;
 
 namespace NineWebService.Controllers
 {
     [Produces("application/json")]
     public class HomeController : Controller
     {
-        private IDataService _dataService;
+        private IDataProcessor<Payload> _dataService;
 
-        public HomeController(IDataService dataService)
+        public HomeController(IDataProcessor<Payload> dataService)
         {
             _dataService = dataService;
         }
@@ -23,9 +22,19 @@ namespace NineWebService.Controllers
                 return BadRequest( new { error = "Could not decode request: JSON parsing failed" } );
             }
 
-            Response responseData = _dataService.ProcessIncomingShowData(requestData);                                
+            if (requestData.Payload == null)
+            {
+                return Ok(new ResponseData { Response = null });
+            }
 
-            return Ok(responseData);
+            var res = _dataService.ProcessRequestData(requestData.Payload);
+
+            ResponseData response = new ResponseData()
+            {
+                Response = res as Show[]
+            };
+
+            return Ok(response);
         }
     }
 }

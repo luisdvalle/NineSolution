@@ -14,6 +14,12 @@ namespace NineWebService.Controllers
             _dataService = dataService;
         }
 
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Index([FromBody]RequestData requestData)
         {

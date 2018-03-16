@@ -2,6 +2,10 @@
 
 namespace NineWebService.Models
 {
+    /// <summary>
+    /// Data model for Payload describing show data to be processed
+    /// </summary>
+    /// <remarks>Implements Data abstract class</remarks>
     public class Payload : Data
     {
         public string Country { get; set; }

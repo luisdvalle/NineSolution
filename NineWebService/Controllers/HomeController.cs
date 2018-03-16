@@ -1,6 +1,7 @@
 ﻿using DataService.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using NineWebService.Models;
+using System.Collections.Generic;
 
 namespace NineWebService.Controllers
 {
@@ -8,6 +9,7 @@ namespace NineWebService.Controllers
     /// Contains API endpoints to process request data.
     /// </summary>
     [Produces("application/json")]
+    [Route("Home/Index")]
     public class HomeController : Controller
     {
         private IDataProcessor<Payload> _dataService;
@@ -32,11 +34,14 @@ namespace NineWebService.Controllers
         /// <param name="requestData">Shows data to be processed</param>
         /// <returns>Response data with processed shows</returns>
         [HttpPost]
+        [Route("")]
+        [ProducesResponseType(typeof(ResponseData), 200)]
+        [ProducesResponseType(typeof(ErrorMessage), 400)]
         public IActionResult Index([FromBody]RequestData requestData)
         {
             if (requestData == null)
             {
-                return BadRequest( new { error = "Could not decode request: JSON parsing failed" } );
+                return BadRequest( new ErrorMessage { Error = "Could not decode request: JSON parsing failed" } );
             }
 
             if (requestData.Payload == null)

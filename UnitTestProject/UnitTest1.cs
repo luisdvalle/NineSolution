@@ -44,6 +44,23 @@ namespace UnitTestProject
             Assert.AreEqual(numActiveShows, result.Length);
         }
 
+        [TestMethod]
+        {
+            // Arrange
+            RequestDataProcessor processor = new RequestDataProcessor();
+            int numActiveShows = 1;
+            int numTotalShows = 1;
+            var data = GetTestData(numActiveShows, numTotalShows);
+
+            // Act
+            var result = processor.ProcessRequestData(data).Select(d => d as Show).ToArray();
+
+            // Assert
+            Assert.AreEqual("The slug", result[0].Slug);
+            Assert.AreEqual("The title", result[0].Title);
+            Assert.AreEqual("url image", result[0].Image);
+        }
+
         private IEnumerable<Payload> GetTestData(int numActiveShows, int numTotalShows)
         {
             string slug = "The slug";

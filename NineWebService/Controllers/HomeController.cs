@@ -4,6 +4,9 @@ using NineWebService.Models;
 
 namespace NineWebService.Controllers
 {
+    /// <summary>
+    /// Contains all API endpoints to process for request data.
+    /// </summary>
     [Produces("application/json")]
     public class HomeController : Controller
     {
@@ -14,12 +17,20 @@ namespace NineWebService.Controllers
             _dataService = dataService;
         }
 
+        /// <summary>
+        ///     Default action for Home Page
+        /// </summary>
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
+        /// <summary>
+        ///     API endpoint to get and process request data
+        /// </summary>
+        /// <param name="requestData">Shows data to be processed</param>
+        /// <returns>Response data with processed shows</returns>
         [HttpPost]
         public IActionResult Index([FromBody]RequestData requestData)
         {

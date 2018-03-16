@@ -5,7 +5,7 @@ using NineWebService.Models;
 namespace NineWebService.Controllers
 {
     /// <summary>
-    /// Contains all API endpoints to process for request data.
+    /// Contains API endpoints to process request data.
     /// </summary>
     [Produces("application/json")]
     public class HomeController : Controller

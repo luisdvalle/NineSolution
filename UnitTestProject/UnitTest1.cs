@@ -45,6 +45,7 @@ namespace UnitTestProject
         }
 
         [TestMethod]
+        public void ProcessRequestData_OneActiveShowCheckDataConsistency_Processed()
         {
             // Arrange
             RequestDataProcessor processor = new RequestDataProcessor();

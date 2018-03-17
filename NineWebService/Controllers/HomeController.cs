@@ -9,7 +9,7 @@ namespace NineWebService.Controllers
     /// Contains API endpoints to process request data.
     /// </summary>
     [Produces("application/json")]
-    [Route("Home/Index")]
+    [Route("")]
     public class HomeController : Controller
     {
         private IDataProcessor<Payload> _dataService;
@@ -34,7 +34,6 @@ namespace NineWebService.Controllers
         /// <param name="requestData">Shows data to be processed</param>
         /// <returns>Response data with processed shows</returns>
         [HttpPost]
-        [Route("")]
         [ProducesResponseType(typeof(ResponseData), 200)]
         [ProducesResponseType(typeof(ErrorMessage), 400)]
         public IActionResult Index([FromBody]RequestData requestData)

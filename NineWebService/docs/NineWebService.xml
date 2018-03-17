@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NineWebService</name>
+    </assembly>
+    <members>
+        <member name="T:NineWebService.Controllers.HomeController">
+            <summary>
+            Contains API endpoints to process request data.
+            </summary>
+        </member>
+        <member name="M:NineWebService.Controllers.HomeController.Index">
+            <summary>
+                Default action for Home Page
+            </summary>
+        </member>
+        <member name="M:NineWebService.Controllers.HomeController.Index(NineWebService.Models.RequestData)">
+            <summary>
+                API endpoint to get and process request data
+            </summary>
+            <param name="requestData">Shows data to be processed</param>
+            <returns>Response data with processed shows</returns>
+        </member>
+        <member name="T:NineWebService.Models.Payload">
+            <summary>
+            Data model for Payload describing show data to be processed
+            </summary>
+            <remarks>Implements Data abstract class</remarks>
+        </member>
+        <member name="T:NineWebService.Models.Show">
+            <summary>
+            Data model for Show describing data to be sent as part of the response
+            </summary>
+            <remarks>Implements Response abstract class</remarks>
+        </member>
+        <member name="T:NineWebService.Services.RequestDataProcessor">
+            <summary>
+            Implementatin of IDataProcessor to process Payload data
+            </summary>
+        </member>
+        <member name="M:NineWebService.Services.RequestDataProcessor.ProcessRequestData(System.Collections.Generic.IEnumerable{NineWebService.Models.Payload})">
+            <summary>
+                Processes a set of Payload data, extracting required information to construct a set of Response 
+                objects
+            </summary>
+            <param name="requestData">Set of Payload data to be processed</param>
+            <returns>Set of Show data with required information about Payload</returns>
+            <remarks>Will process only Payload objects with DRM = True and EpisodeCount > 0</remarks>
+        </member>
+    </members>
+</doc>

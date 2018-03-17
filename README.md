@@ -17,5 +17,8 @@ If invalid JSON is sent, the application will return a JSON response with HTTP s
     "error": "Could not decode request: JSON parsing failed"
 }
 
-Structure of this solution
-- ASP.NET WebAPI Core 2.0
+Structure of this application
+
+A ASP.NET WebAPI Core 2.0 project
+A .NET Standard 2.0 library containing the abstractions used in this project
+A UnitTest .NET Core 2.0 project
